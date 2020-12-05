@@ -10,9 +10,22 @@ class TodolistsController < ApplicationController
     # 2. データをデータベースに保存するためのsaveメソッドを実行
     list.save
     
-    # 3. トップ画面へリダイレクト
-    redirect_to "/top"
+    # 3. 詳細画面へリダイレクト
+    redirect_to todolist_path(list.id)
   end
+  
+  def index
+    # listsテーブルの全てのデータを@listに配列で代入する
+    @lists = List.all
+  end
+  
+  def show
+    @list = List.find(params[:id])
+  end
+  
+  def edit
+    @list = List.find(params[:id])
+    
   
   private
   # ストロングパラメータ
