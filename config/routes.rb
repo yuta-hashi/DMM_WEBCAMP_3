@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   get "todolists/:id" => "todolists#show", as: "todolist"
   
   # /todolists/:id/editのURLでgetメソッドが実行されるとtodolistsコントローラーのeditアクション(edit_todolist)が実行される
-  get "todolist/:id/edit" => "todolists#edit", as: "edit_todolist"
+  get "todolists/:id/edit" => "todolists#edit", as: "edit_todolist"
+  
+  #/todolists/:idのURLでpatchメソッドが実行されるとtodolistsコントローラーのupdateアクション(update_todolist)が実行される
+  patch "todolists/:id" => "todolists#update", as: "update_todolist"
+  
 end
 
