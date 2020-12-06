@@ -20,5 +20,8 @@ Rails.application.routes.draw do
   #/todolists/:idのURLでpatchメソッドが実行されるとtodolistsコントローラーのupdateアクション(update_todolist)が実行される
   patch "todolists/:id" => "todolists#update", as: "update_todolist"
   
+  #/todolists/:idのURLでdestroyメソッドが実行されるとtodolistsコントローラーのdestroyアクション(destroy_todolist)が実行される
+  delete "todolists/:id" => "todolists#destroy", as: "destroy_todolist"
+  
 end
 
